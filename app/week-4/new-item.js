@@ -1,0 +1,78 @@
+"use client"
+import { useState } from "react";
+
+export default function NewItemForm() {
+    const [name, setName] = useState("");
+    const [quantity, setQuantity] = useState(1)
+    const [category, setCategory]  = useState("produce") 
+    const [eventCreated, setEventCreated] = useState(false);
+
+
+    const handleNameChange = (event) => {
+            setName(event.target.value)
+    };
+
+    const handleQuantityChange =(event) =>
+        {setQuantity(parseInt(event.target.value))
+    };
+
+    const handleSubmit = (event) =>{
+        event.preventDefault();
+        alert("Added item:" + name +", quantity: " + quantity + ", category: "+ category)
+        const newEvent = {
+            name,
+            quantity,
+            category,
+            };
+            console.log(newEvent); 
+        
+            setName("");
+            setQuantity(1);
+            setCategory("produce");
+            
+            setEventCreated(true);
+    };
+
+    return(
+        <main className="flex justify-center w-full">
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <div className="block mb-4 text-black">
+                    <input required onChange={handleNameChange} value={name} type="text" placeholder="Item Name"
+                    className="mt-1 p-2 block w-full rounded-md  bg-gray-100"
+                    />
+                    </div>
+                    <div className="flex justify-bteween text-black">
+                    <input
+                        required
+                        min="1"
+                        max="99"
+                        value={quantity}  
+                        onChange={handleQuantityChange}
+                        type="number"
+                        placeholder='Quantity'
+                        className="mr-1 p-2 block w-full rounded-md  bg-gray-100"
+                    />
+                    <select className="ml-1 border-2 border-gray-100 p-2 rounded-md">
+                        <option value disabled>Category</option>
+                        <option value="produce" selected>Produce</option>
+                        <option value="dairy">Dairy</option>
+                        <option value="bakery">Bakery</option>
+                        <option value="meat">Meat</option>
+                        <option value="frozen foods">Frozen Foods</option>
+                        <option value="canned goods">Canned Goods</option>
+                        <option value="dry goods">Dry Goods</option> 
+                    </select>
+                    </div >
+                    <button className="mt-4 w-full py-2 px-4 bg-sky-600 hover:bg-sky-500 rounded-md text-white"
+                        type="submit">
+                        +
+                    </button>
+
+                </form>
+            </div>
+        </main>
+    )
+
+ 
+}
