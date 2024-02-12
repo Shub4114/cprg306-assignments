@@ -15,10 +15,13 @@ export default function NewItemForm() {
     const handleQuantityChange =(event) =>
         {setQuantity(parseInt(event.target.value))
     };
+    const handleCategory =(event) =>
+        {setCategory(event.target.value)
+    };
 
     const handleSubmit = (event) =>{
         event.preventDefault();
-        alert("Added item:" + name +", quantity: " + quantity + ", category: "+ category)
+        
         const newEvent = {
             name,
             quantity,
@@ -31,6 +34,7 @@ export default function NewItemForm() {
             setCategory("produce");
             
             setEventCreated(true);
+            alert("Added item:" + name +", quantity: " + quantity + ", category: "+ category);
     };
 
     return(
@@ -53,9 +57,9 @@ export default function NewItemForm() {
                         placeholder='Quantity'
                         className="mr-1 p-2 block w-full rounded-md  bg-gray-100"
                     />
-                    <select className="ml-1 border-2 border-gray-100 p-2 rounded-md">
+                    <select value={category} onChange={handleCategory} className="ml-1 border-2 border-gray-100 p-2 rounded-md">
                         <option value disabled>Category</option>
-                        <option value="produce" selected>Produce</option>
+                        <option value="produce">Produce</option>
                         <option value="dairy">Dairy</option>
                         <option value="bakery">Bakery</option>
                         <option value="meat">Meat</option>
