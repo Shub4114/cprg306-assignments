@@ -19,14 +19,14 @@ const ItemList = () => {
 
   return (
     <main>
-        <h1 className='text-xl font-extrabold text-center'>Shopping List</h1>
+        <h1 className='text-4xl font-bold text-center mb-4'>Shopping List</h1>
     <div>
       <div className=' flex justify-center'>
-        <text className='font-bold p-1 m-2'>Sort By:</text>
-        <button onClick={() => setSortBy('name')} className='p-1 bg-purple-400 m-2 ' >
+        <text className='font-bold p-1 m-2 text-lg'>Sort By:</text>
+        <button onClick={() => setSortBy('name')} className='p-2 bg-purple-400 m-2 rounded-full ' >
           Sort by Name
         </button>
-        <button onClick={() => setSortBy('category')} className='p-1 bg-purple-400 m-2' >
+        <button onClick={() => setSortBy('category')} className='p-2 bg-purple-400 m-2 rounded-full' >
           Sort by Category
         </button>
       </div>
