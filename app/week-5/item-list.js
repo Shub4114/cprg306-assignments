@@ -23,10 +23,10 @@ const ItemList = () => {
     <div>
       <div className=' flex justify-center'>
         <text className='font-bold p-1 m-2 text-lg'>Sort By:</text>
-        <button onClick={() => setSortBy('name')} className='p-2 bg-purple-400 m-2 rounded-full ' >
+        <button onClick={() => setSortBy('name')} className='p-2 bg-purple-400 m-2 rounded-full hover:bg-purple-600 ' >
           Sort by Name
         </button>
-        <button onClick={() => setSortBy('category')} className='p-2 bg-purple-400 m-2 rounded-full' >
+        <button onClick={() => setSortBy('category')} className='p-2 bg-purple-400 m-2 rounded-full ' >
           Sort by Category
         </button>
       </div>
