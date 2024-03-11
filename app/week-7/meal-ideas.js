@@ -14,10 +14,6 @@ const MealIdeas = ({ ingredient }) => {
     const mealIdeas = await fetchMealIdeas(ingredient);
     setMeals(mealIdeas);
   };
-  const loadIngredients = async (meal) => {
-    const ingredient = await fetchIngredientName(meal.idMeal);
-    setSelectedMeal(ingredient);
-  };
 
   useEffect(() => {
     loadMealIdeas();
@@ -31,7 +27,7 @@ const MealIdeas = ({ ingredient }) => {
           {meals && (
             <ul >
               {meals.map((meal) => (
-                <li key={meal.idMeal} className="text-white p-4 bg-auto m-4 max-w-sm rounded-md bg-gray-600" onClick={() => loadIngredients(meal.idMeal)}>{meal.strMeal}</li>
+                <li key={meal.idMeal} className="text-white p-4 bg-auto m-4 max-w-sm rounded-md bg-gray-600">{meal.strMeal}</li>
               ))}
              
             </ul>
