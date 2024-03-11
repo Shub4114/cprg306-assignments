@@ -36,9 +36,9 @@ const MealIdeas = ({ ingredient }) => {
              
             </ul>
             )}
-            {!meals.length && <p>No meal ideas found for {ingredient}</p>}
-        </div>
-      );
+            {!meals?.length && <p>No meal ideas found for {ingredient}</p>} 
+            </div>
+    );
     };
 
 export default MealIdeas;

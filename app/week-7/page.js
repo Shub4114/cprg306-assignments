@@ -28,7 +28,7 @@ export default function Page(){
             <ItemList items={items} onItemSelect={handleItemSelect} />
             </ul>
             <ul>
-            <h2>Meal Ideas:</h2> 
+            <h2 className='font-bold'>Meal Ideas:</h2> 
             {selectedItemName && <MealIdeas ingredient={selectedItemName} />} </ul> 
             </div>
             
