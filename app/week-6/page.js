@@ -12,11 +12,14 @@ export default function Page(){
     };
     return(
     <main>
-        <h1 className='text-4xl font-bold text-center m-4'>Shopping List</h1>
+        <h1 className=' text-4xl font-bold text-center m-4'>Shopping List</h1>
+        <div>
         <div>
             <NewItemForm onAddItem={handleAddItem} className="" />
             <ItemList items={items} />  
-        </div>   
+        </div> 
+        </div>
+
     </main>) 
 };
         

@@ -41,7 +41,7 @@ export default function NewItemForm({onAddItem}) {
     };
 
     return(
-        <main className="flex justify-center">
+        <main className="flex m-4">
             <div>
                 <form onSubmit={handleSubmit}>
                     <div className="block mb-4 text-black">
