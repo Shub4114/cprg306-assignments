@@ -13,13 +13,14 @@ const Page = () => {
   return (
     <div>
       {user ? (
-        <div>
+        <div className=" text-center width-half rounded-md mb-4 text-blue-300 text-4x1 font-bold'">
           <h1>Welcome, {user.displayName}</h1>
           <p>Email: {user.email}</p>
           <button onClick={firebaseSignOut}>Logout</button>
-          <Link href="./week-8/shopping-list">
+          <p><Link href="./week-8/shopping-list">
             Go to Shopping List
-          </Link>
+          </Link></p>
+            
         </div>
       ) : (
         <button onClick={gitHubSignIn}>Login with GitHub</button>
