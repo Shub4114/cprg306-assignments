@@ -17,8 +17,7 @@ const Page = () => {
           <h1>Welcome, {user.displayName}</h1>
           <p>Email: {user.email}</p>
           <button onClick={firebaseSignOut}>Logout</button>
-          <br />
-          <Link href="shopping-list">
+          <Link href="./week-8/shopping-list">
             Go to Shopping List
           </Link>
         </div>
